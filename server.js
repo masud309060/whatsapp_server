@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors'
 import Pusher from 'pusher'
 import Messages from './dbMessages.js'
+require('dotenv').config()
 
 // PASS=hfZxvOivgoaDEPeo
 
@@ -31,7 +32,7 @@ app.use((req, res, next) => {
 
 
 // DB config 
-const cunnection_url = `mongodb+srv://admin:hfZxvOivgoaDEPeo@cluster0.e1jdm.mongodb.net/whatsapp_db?retryWrites=true&w=majority`
+const cunnection_url = `mongodb+srv://admin:${process.env.DB_PASS}@cluster0.e1jdm.mongodb.net/whatsapp_db?retryWrites=true&w=majority`
 
 
 // ??? 
